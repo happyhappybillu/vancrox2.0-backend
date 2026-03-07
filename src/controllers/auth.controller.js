@@ -9,6 +9,12 @@ exports.registerInvestor = asyncHandler(async (req, res) => {
 const { name, email, password } = req.body;
 
 const exists = await User.findOne({ email });
+    
+    if(!email || !password){
+return res.status(400).json({
+message:"Email and password required"
+});
+}
 
 if (exists) {
 return res.status(400).json({ success:false,message:"Email already exists"});

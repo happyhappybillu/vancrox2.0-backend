@@ -25,3 +25,9 @@ status:"pending"
 
 res.json(withdraw);
 };
+
+if(withdraw.status !== "pending"){
+return res.status(400).json({
+message:"Already processed"
+});
+}

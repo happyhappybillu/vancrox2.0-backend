@@ -10,7 +10,7 @@ const startDepositWatcher = require("./src/services/depositWatcher.service");
 
 const { initSocket } = require("./src/services/socket.service");
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 // Root route (health check)
 app.get("/", (req, res) => {
